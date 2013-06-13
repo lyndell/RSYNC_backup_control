@@ -15,12 +15,19 @@
 # TODO; test for parameter; required
 # TODO; test for directories listed in DIR parms
 
+# logging and log naming.
+LOGNUM=`date +%s`
+LOGNAME='rebackup'
+LOGDIR="./logs"
+LOGEXT="log"
+LOGFILE="${LOGDIR}/${LOGNAME}.${LOGNUM}.${LOGEXT}"
+
 # Sources:
 # ~/Exclude/BACKUP/2012\ Feast\ -\ Kauai\ Photographs
 
 # use default identy, ssh key, don't need to pass parms to SSH
-rsync $opts -i --log-file=$LOGFILE --delete -avv 
-~/Exclude/BACKUP/VPS
+rsync $opts -i --log-file=$LOGFILE --delete -avv \
+~/Excludes/BACKUP/VPS                             \
 /Volumes/LacieRugged/BACKUP-RSYNC
 # -i, --itemize-changes       output a change-summary for all updates
 #     --log-file=FILE         log what we're doing to the specified FILE
