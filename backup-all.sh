@@ -26,16 +26,27 @@ LOGFILE="${LOGDIR}/${LOGNAME}.${LOGNUM}.${LOGEXT}"
 # ~/Exclude/BACKUP/2012\ Feast\ -\ Kauai\ Photographs
 
 # use default identy, ssh key, don't need to pass parms to SSH
-rsync $opts -i --log-file=$LOGFILE --delete -avv \
-~/Excludes/BACKUP/VPS                             \
-/Volumes/LacieRugged/BACKUP-RSYNC
 # -i, --itemize-changes       output a change-summary for all updates
 #     --log-file=FILE         log what we're doing to the specified FILE
 #     -v, --verbose               increase verbosity
 #     -a, --archive               archive mode; same as -rlptgoD (no -H)
 #     -r, --recursive             recurse into directories
 #     -t, --times                 preserve times
+rsync $opts -i --log-file=$LOGFILE --delete -avv \
+~/Excludes/BACKUP/VPS                             \
+/Volumes/LacieRugged/BACKUP-RSYNC
 
+rsync $opts -i --log-file=$LOGFILE --delete -avv \
+~/Excludes/SD\ cards                              \
+/Volumes/Maxtor/BACKUP-RSYNC
+
+rsync $opts -i --log-file=$LOGFILE --delete -avv \
+~/Excludes/Star_Wars                              \
+/Volumes/Maxtor/BACKUP-RSYNC
+
+rsync $opts -i --log-file=$LOGFILE --delete -avv \
+~/Excludes/Star_Trek                              \
+/Volumes/Maxtor/BACKUP-RSYNC
 
 
 tail $LOGFILE
