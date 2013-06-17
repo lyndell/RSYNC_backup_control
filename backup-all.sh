@@ -36,16 +36,11 @@ rsync $opts -i --log-file=$LOGFILE --delete -avv \
 ~/Excludes/BACKUP/VPS                             \
 /Volumes/LacieRugged/BACKUP-RSYNC
 
+## MAXTOR drive
 rsync $opts -i --log-file=$LOGFILE --delete -avv \
 ~/Excludes/SD\ cards                              \
-/Volumes/Maxtor/BACKUP-RSYNC
-
-rsync $opts -i --log-file=$LOGFILE --delete -avv \
-~/Excludes/Star_Wars                              \
-/Volumes/Maxtor/BACKUP-RSYNC
-
-rsync $opts -i --log-file=$LOGFILE --delete -avv \
 ~/Excludes/Star_Trek                              \
+~/Excludes/Star_Wars                              \
 /Volumes/Maxtor/BACKUP-RSYNC
 
 
