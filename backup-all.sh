@@ -15,6 +15,8 @@
 # TODO; test for parameter; required
 # TODO; test for directories listed in DIR parms
 
+set -u # exit over uninitialised variables
+
 # logging and log naming.
 LOGNUM=`date +%s`
 LOGNAME='rebackup'
@@ -32,6 +34,8 @@ LOGFILE="${LOGDIR}/${LOGNAME}.${LOGNUM}.${LOGEXT}"
 #     -a, --archive               archive mode; same as -rlptgoD (no -H)
 #     -r, --recursive             recurse into directories
 #     -t, --times                 preserve times
+
+## LACIE drive
 rsync $opts -i --log-file=$LOGFILE --delete -avv \
 ~/Excludes/BACKUP/VPS                             \
 /Volumes/LacieRugged/BACKUP-RSYNC
@@ -41,6 +45,8 @@ rsync $opts -i --log-file=$LOGFILE --delete -avv \
 ~/Excludes/SD\ cards                              \
 ~/Excludes/Star_Trek                              \
 ~/Excludes/Star_Wars                              \
+~/Excludes/BACKUP.VPS                            \
+~/Excludes/VIDEOS                                \
 /Volumes/Maxtor/BACKUP-RSYNC
 
 
