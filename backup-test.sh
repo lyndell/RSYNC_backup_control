@@ -37,12 +37,11 @@ opts="--exclude='.git'"
 #     -t, --times                 preserve times
 #     --exclude=PATTERN       exclude files matching PATTERN
 
-
-
 ## MAXTOR drive
 rsync $opts -i --log-file=$LOGFILE --delete -avv \
 ~/Excludes/BACKUP                                \
-~/Excludes/BACKUP.VPS                            \
-~/Excludes/VIDEOS                                \
+~/Excludes/cloud.Lyndell.NET                     \
 /Volumes/Maxtor/BACKUP-RSYNC
 
+exit;
+~/Excludes/VIDEOS                                \
