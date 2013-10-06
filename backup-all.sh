@@ -31,25 +31,24 @@ function RunLacie {
   # logging and log naming.
   LOGNUM=`date +%s`
   LOGNAME='lacie'
-  LOGDIR="./logs"
+  LOGDIR="rsync.logs"
   LOGEXT="log"
   LOGFILE="${LOGDIR}/${LOGNAME}.${LOGNUM}.${LOGEXT}"
 
+#  ~/Excludes/VIDEOS/Star_Trek                             \
 #  rsync $opts -i --log-file=$LOGFILE --delete -avv       \
-  rsync $opts --log-file=$LOGFILE --delete -avv       \
-  ~/Excludes/BACKUP/2012\ Feast\ -\ Kauai\ Photographs   \ 
-#  ~/Excludes/SD\ cards                                   \
-  ~/Excludes/VIDEOS/Star_Trek                            \
+  rsync $opts --log-file=$LOGFILE --delete -avv           \
+  ~/Excludes/BACKUP                                       \
+  ~/Excludes/SD\ cards                                    \
   /Volumes/LacieRugged/BACKUP-RSYNC
 }
-# RunLacie
+RunLacie
 
 
 ## MAXTOR drive
 function RunMaxtor {
   T="-n"; # dry run, test mode ON
   T=""; # dry run, test mode OFF
-  T="-n"; # dry run, test mode ON
   opts=""
   opts="--exclude='VIDEOS/_MISC/'"
   opts="$opts $T "
@@ -57,14 +56,14 @@ function RunMaxtor {
   # logging and log naming.
   LOGNUM=`date +%s`
   LOGNAME='maxtor'
-  LOGDIR="./logs"
+  LOGDIR="rsync.logs"
   LOGEXT="log"
   LOGFILE="${LOGDIR}/${LOGNAME}.${LOGNUM}.${LOGEXT}"
 
+#  ~/Excludes/VIDEOS/Star_Trek                         \
+#  ~/Excludes/VIDEOS/Star_Wars                         \
   rsync $opts -i --log-file=$LOGFILE --delete -avv    \
   ~/Excludes/SD\ cards                                \
-  ~/Excludes/VIDEOS/Star_Trek                         \
-  ~/Excludes/VIDEOS/Star_Wars                         \
   ~/Excludes/cloud.Lyndell.NET                        \
   ~/Excludes/VIDEOS                                   \
   ~/Excludes/2012\ Chili\ Supper\ -\ Source           \
