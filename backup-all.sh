@@ -69,4 +69,4 @@ function RunMaxtor {
   ~/Excludes/2012\ Chili\ Supper\ -\ Source           \
   /Volumes/Maxtor/BACKUP-RSYNC
 }
-RunMaxtor
+# RunMaxtor
